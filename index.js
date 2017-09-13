@@ -24,6 +24,8 @@ function test(req, res, next){
 //and the stuff after the question mark is added to an object;
 //   ex:  /shows?genre=comedy&rating=9 
 //    ^ {genre: 'comedy', rating: '9'} this object is saved to req.query
+
+// /shows/last can match '/shows/last' and '/shows/:id', ITS A GOTCHA!! CAREFUL
 app.get('/shows', test, logQuery, showsController.index );
 app.get('shows/last', showsController.last);
 app.get('/shows/:id', showsController.show );
